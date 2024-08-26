@@ -17,8 +17,7 @@ jobs:
         run: npm install
       - name: Build App
         run: npm run build -- --base=/Listerio/
-      - name: Create 404.html
-        run: echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; URL=./index.html"></head><body></body></html>' > dist/404.html
+        
       - name: Archive artifact
         shell: sh
         run: |
