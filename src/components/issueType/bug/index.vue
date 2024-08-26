@@ -1,5 +1,5 @@
 <template>
-  <!-- <SideBarIssueType :isCollapsed="isSidebarCollapsed" @toggleSidebar="toggleSidebar" /> -->
+  <SideBarIssueType :isCollapsed="isSidebarCollapsed"  />
   <div v-if="isLoading">
     <div class="flex items-center justify-center h-full">
       <a-spin size="large" />

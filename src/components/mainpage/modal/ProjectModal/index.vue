@@ -17,25 +17,6 @@
           </button>
         </div>
 
-        <!-- <button class="w-full mt-2">
-          <div class="flex px-4 py-2 h-[52px] bg-white hover:bg-gray-200 transition-colors duration-200 items-center">
-            <img src="../../../../assets/img/project_logo.svg" class="h-6 w-6" />
-            <span class="flex flex-col ml-4 items-start">
-              <span class="text-sm font-ui">Project 1</span>
-              <span class="text-xs text-gray-500 font-ui">Software project</span>
-            </span>
-          </div>
-        </button>
-
-        <button class="w-full mt-2">
-          <div class="flex px-4 py-2 h-[52px] bg-white hover:bg-gray-200 transition-colors duration-200 items-center">
-            <img src="../../../../assets/img/project_logo.svg" class="h-6 w-6" />
-            <span class="flex flex-col ml-4 items-start">
-              <span class="text-sm font-ui">Project 1</span>
-              <span class="text-xs text-gray-500 font-ui">Software project</span>
-            </span>
-          </div>
-        </button> -->
 
       </div>
 

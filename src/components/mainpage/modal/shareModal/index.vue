@@ -93,19 +93,19 @@ const loading = ref<boolean>(false);
 
 const handleOk = async () => {
   loading.value = true;
-  const days = parseFloat(dateTime.value);
-  const hours = Math.floor(days * 24);
-  const minutes = Math.floor((days * 24 - hours) * 60);
-  const seconds = 0;
+  // const days = parseFloat(dateTime.value);
+  // const hours = Math.floor(days * 24);
+  // const minutes = Math.floor((days * 24 - hours) * 60);
+  // const seconds = 0;
 
   // Tạo chuỗi thời gian theo định dạng HH:mm:ss
-  const timeFormat = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  // const timeFormat = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
   try {
     await shareProject({
       email: email.value,
       role: role.value,
-      expireTime: timeFormat
+      expireTime: dateTime.value
     })
     message.success('Share project success!');
   } catch (error) {

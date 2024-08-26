@@ -90,7 +90,7 @@
               </a-menu-item>
               <hr>
               <a-menu-item key="1">
-                <a href="/profile">Profile</a>
+                <router-link to="/profile">Profile</router-link>
               </a-menu-item>
               <a-menu-item key="2">
                 <a href="/mainpage">Notification</a>
