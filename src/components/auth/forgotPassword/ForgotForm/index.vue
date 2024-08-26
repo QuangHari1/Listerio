@@ -106,7 +106,7 @@ import { useRouter } from 'vue-router';
 import { useForgotPasswordStore, useValidateOtpStore } from '../../../../stores/authStores/forgotStore';
 import { resetPassWord } from '../../../../api/forgotPassword';
 import '@fortawesome/fontawesome-free/css/all.css';
-
+import { message } from 'ant-design-vue';
 // Reactive state
 const router = useRouter();
 const password = ref('');
@@ -144,6 +144,7 @@ const handleSubmit = async () => {
     // Clear stores and redirect
     forgotPasswordStore.email = null;
     validateOtpStore.resetPasswordKey = null;
+    message.success('Password reset successful.');
     router.push('/author');
   } catch (error: any) {
     console.error('Password reset failed:', error);

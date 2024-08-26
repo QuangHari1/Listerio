@@ -102,7 +102,7 @@ import { useRouter } from 'vue-router';
 import { useRegisAccountStore, useValidateOtpRegisStore } from '../../../../stores/authStores/regisStore';
 import { createPassWord } from '../../../../api/register';
 import "@fortawesome/fontawesome-free/css/all.css";
-
+import { message } from 'ant-design-vue';
 // Reactive state
 const router = useRouter();
 const password = ref("");
@@ -130,6 +130,7 @@ const handleSubmit = async () => {
     // Clear state and navigate
     useRegisAccountStore().email = null;
     useValidateOtpRegisStore().registerKey = null;
+    message.success('Account created successfully!');
     router.push("/author");
   } catch (error: any) {
     console.error("Password reset failed:", error);

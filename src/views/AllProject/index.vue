@@ -105,7 +105,7 @@
               class="right-0 top-[50px] absolute bg-white border border-gray-200 rounded shadow-lg  min-w-[120px] min-h-[40px] z-50 cursor-pointer">
 
               <div class="h-[40px] w-full flex items-center justify-start hover:bg-gray-200 relative ">
-                <deleteProjectModal :projectId="record.key" :proJectName="record.name" @projectDeleted = "handleProjectDelete"/>
+                <deleteProjectModal  @projectDeleted ="handleProjectDelete" :projectId="record.key" :proJectName="record.name"/>
               </div>
               
             </div>
@@ -265,8 +265,9 @@ const handleClickOutside =(event: MouseEvent)  =>{
     activeLead.value = {};
   }
 }
-async function handleProjectDelete() {
-  
+async function handleProjectDelete (projectId :string)  {
+  console.log('project deleted', projectId);
+  data.value = data.value.filter((project) => project.key !== projectId);
   loadData();
 }
 

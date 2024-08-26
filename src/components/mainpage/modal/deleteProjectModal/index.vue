@@ -1,8 +1,8 @@
 <template>
     <div @click="showModal" class="w-full h-full flex justify-start items-center z-40 px-4 bg-white hover:bg-gray-200">
         <span class="z-20">Delete Project</span>
-        <a-modal v-model:open="open" @ok="handleOk" class="modal-custom  rounded-none mt-[-30px]"
-            :closable="false" :width="500" :footer=null>
+        <a-modal v-model:open="open" @ok="handleOk" class="modal-custom  rounded-none mt-[-30px]" :closable="false"
+            :width="500" :footer=null>
 
             <!-- header -->
             <div class="text-xl font-apple text-text-dark-thin font-semibold ml-2">
@@ -14,12 +14,13 @@
 
             <!-- body -->
             <div class="mt-6 text-sm font-apple text-text-dark-thin ml-2">
-                
+
                 <div>
                     The project along with its issues, Jira components, attachments, and versions will be deleted.
                 </div>
                 <div>
-                    <span >Are you sure you want to delete  <span class="font-bold">{{ props.proJectName }} ?</span></span>
+                    <span>Are you sure you want to delete <span class="font-bold">{{ props.proJectName }}
+                            ?</span></span>
                 </div>
             </div>
 
@@ -40,7 +41,7 @@
                         </div>
                     </button>
 
-                   
+
                 </div>
             </div>
 
@@ -59,17 +60,17 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import { ref} from 'vue';
+import { ref } from 'vue';
 import { deleteProject } from '../../../../api/project';
 
 const props = defineProps<{
     projectId: string;
     proJectName: string;
-   
+
 }>();
 
 const emit = defineEmits<{
-    (event: 'projectDeleted',projectId:string): void;
+    (event: 'projectDeleted', projectId: string): void;
 }>();
 
 
@@ -88,12 +89,14 @@ async function deleteProjectInfo() {
     isLoading.value = true;
     try {
         await deleteProject(props.projectId);
-        emit('projectDeleted',props.projectId);
+        console.log('project deleted');
+        emit('projectDeleted', props.projectId);
         open.value = false;
     } catch (error) {
         console.log(error);
     } finally {
         isLoading.value = false;
+
     }
 }
 
@@ -111,6 +114,4 @@ const handleCancel = () => {
 </script>
 
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
