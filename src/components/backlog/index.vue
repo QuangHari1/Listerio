@@ -100,10 +100,10 @@
                                             :onCompleteSprint="() => completeSprint(sprint.id)" :sprintId="sprint.id" />
 
                                     </button>
-                                    <button @click.stop="toggleSprintDropdown(sprint.id)" ref="dropdownSprint" 
+                                    <button  ref="dropdownSprint"
                                         class="bg-gray-200 bg-opacity-70 hover:bg-gray-300 transition-opacity rounded h-8 w-8  mr-2 relative ">
-                                        <i class="fa-solid fa-ellipsis text-xl z-50  pt-1"></i>
-                                        <div v-if="activeDropdown == sprint.id" 
+                                        <i class="fa-solid fa-ellipsis text-xl z-50  pt-1" @click.stop="toggleSprintDropdown(sprint.id)"></i>
+                                        <div v-if="activeDropdown == sprint.id"   
                                             class="ml-[-90px] mt-2  bg-white border border-gray-200 rounded shadow-lg  w-[120px] min-h-[40px]">
 
                                             <button
@@ -493,10 +493,11 @@ function toggleSprintDropdown(id: string) {
 
     if (activeDropdown.value === id) {
         activeDropdown.value = null;
+        return;
     } else {
         activeDropdown.value = id;
     }
-    // activeDropdown.value != id;
+    activeDropdown.value = id;
 }
 
 function countTasksForSprint(sprintId: string | null) {
