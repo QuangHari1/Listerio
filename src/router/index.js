@@ -149,10 +149,7 @@ const routes = [
         component: Profile, 
       },
       
-      {
-        path: '/share',  
-        component: WaitSharePage,
-      },
+      
       {
         path: '',
         component: Project,
@@ -222,7 +219,11 @@ const routes = [
   {
     path: '/wait',  
     component: WaitPage,
-  }
+  },
+  {
+    path: '/share',  
+    component: WaitSharePage,
+  },
 ];
 
 const router = createRouter({
