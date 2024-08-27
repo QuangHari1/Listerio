@@ -70,7 +70,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-    (event: 'projectDeleted', projectId: string): void;
+    (event: 'projectDeleted123', projectId: string): void;
 }>();
 
 
@@ -88,15 +88,15 @@ const showModal = () => {
 async function deleteProjectInfo() {
     isLoading.value = true;
     try {
-        await deleteProject(props.projectId);
-        console.log('project deleted');
-        emit('projectDeleted', props.projectId);
-        open.value = false;
+        await deleteProject( props.projectId);
+ 
+
+        emit('projectDeleted123',props.projectId);
     } catch (error) {
         console.log(error);
     } finally {
         isLoading.value = false;
-
+        open.value = false;
     }
 }
 

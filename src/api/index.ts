@@ -5,8 +5,10 @@ import { useAuthStore } from '../stores/authStores/authStore'; // Cập nhật �
 
 const apiClient = axios.create({
   // baseURL: "https://moose-helping-dog.ngrok-free.app/api/v1",
-  baseURL: "http://localhost:8080/api/v1",
+  // baseURL: "http://localhost:8080/api/v1",
+  baseURL: "https://adapted-ox-suitably.ngrok-free.app/api/v1",
   headers: {
+    "ngrok-skip-browser-warning": "true",
     "Content-Type": "application/json",
   },
 });

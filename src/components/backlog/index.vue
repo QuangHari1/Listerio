@@ -513,11 +513,11 @@ function countIssueForSprint(sprintId: string | null) {
 }
 
 const handleSprintUpdated = (sprintId: string ) => {
-    toggleSprintDropdown(sprintId);
+    // toggleSprintDropdown(sprintId);
     fetchAllData();
 };
 
-const handleSprintDeleted = async (deletedSprintId: string) => {
+const handleSprintDeleted = async(deletedSprintId: string) => {
 
     const allSprintTasks = data.value.get(deletedSprintId) || []
     const sprint = sprints.value.find(sprint => sprint.id === deletedSprintId);
@@ -556,6 +556,7 @@ const handleSprintDeleted = async (deletedSprintId: string) => {
     } finally {
         isLoading.value = false;
         toggleSprintDropdown(sprint.id);
+        fetchAllData();
     }
 
 };
@@ -612,6 +613,7 @@ async function completeSprint(sprintId: string) {
         console.error("Failed to complete sprint", error);
     } finally {
         isLoading.value = false;
+        fetchAllData();
     }
 
 }

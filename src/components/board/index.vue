@@ -427,7 +427,7 @@ async function searchAllTask(searchSprintId: string | null) {
   try {
     const response = await fetchAllTask();
     const filteredTasks = response.data.filter(
-      (task : any) => task.sprintDetailResponse.sprintId !== null && task.sprintDetailResponse.sprintId != "COMPLETE"
+      (task : any) => task.sprintDetailResponse.sprintId !== null && task.sprintDetailResponse.sprintStatus != "COMPLETE"
     );
     const map = new Map<string, any[]>();
     filteredTasks.forEach((task:any) => {

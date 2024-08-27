@@ -105,7 +105,8 @@
               class="right-0 top-[50px] absolute bg-white border border-gray-200 rounded shadow-lg  min-w-[120px] min-h-[40px] z-50 cursor-pointer">
 
               <div class="h-[40px] w-full flex items-center justify-start hover:bg-gray-200 relative ">
-                <deleteProjectModal  @projectDeleted ="handleProjectDelete" :projectId="record.key" :proJectName="record.name"/>
+                <deleteProjectModal  
+                :projectId="record.key" :proJectName="record.name" @projectDeleted123 ="handleProjectDelete" />
               </div>
               
             </div>
@@ -134,7 +135,6 @@ import { type TableProps, type TableColumnType } from "ant-design-vue/es";
 import type { Key } from "ant-design-vue/es/table/interface";
 import { useProjectStore, useProjectRoleStore } from "../../stores/projectStores/projectStore";
 import DeleteProjectModal from "../../components/mainpage/modal/deleteProjectModal/index.vue";
-import "@fortawesome/fontawesome-free/css/all.css";
 
 interface DataType {
   key: string;
@@ -265,10 +265,11 @@ const handleClickOutside =(event: MouseEvent)  =>{
     activeLead.value = {};
   }
 }
-async function handleProjectDelete (projectId :string)  {
-  console.log('project deleted', projectId);
-  data.value = data.value.filter((project) => project.key !== projectId);
-  loadData();
+const handleProjectDelete = (deletedprojectId: string) => {
+  // console.log('project deleted',deletedprojectId);
+
+   loadData();
+  
 }
 
 const clearSearch = () => {
