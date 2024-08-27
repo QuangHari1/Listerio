@@ -266,7 +266,7 @@ const handleClickOutside =(event: MouseEvent)  =>{
   }
 }
 const handleProjectDelete = (deletedprojectId: string) => {
-  // console.log('project deleted',deletedprojectId);
+  console.log('project deleted',deletedprojectId);
 
    loadData();
   

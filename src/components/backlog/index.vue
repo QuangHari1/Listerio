@@ -514,6 +514,7 @@ function countIssueForSprint(sprintId: string | null) {
 
 const handleSprintUpdated = (sprintId: string ) => {
     // toggleSprintDropdown(sprintId);
+    console.log("sprintId", sprintId);
     fetchAllData();
 };
 
